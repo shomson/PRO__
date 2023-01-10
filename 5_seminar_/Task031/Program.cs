@@ -9,7 +9,7 @@ int[] GetRandomArray(int size, int minValue, int maxValue)
 {
     int[] array = new int[size];
 
-    for(int i = 0; i < size; i++) //foreach(int el in array) возможно заменить for условием foreach - перебирает каждый элемент внутри массива
+    for(int i = 0; i < size; i++)
     {
         array[i] = new Random().Next(minValue, maxValue + 1);
     }
@@ -19,7 +19,7 @@ int[] GetRandomArray(int size, int minValue, int maxValue)
 int SumPosNums = 0;
 int SumNegNums = 0;
 
-for (int j = 0; j < array.Length - 1; j++)
+for (int j = 0; j < array.Length; j++) //foreach(int el in array) возможно заменить for условием foreach - перебирает каждый элемент внутри массива
 {
     if(array[j] >= 0) SumPosNums += array[j];
     else SumNegNums += array[j];
