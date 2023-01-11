@@ -1,4 +1,4 @@
-﻿//Задайте одномерный массив, заполненный случайными числами. 
+﻿//Задайте одномерный массив, заполненный случайными числами.
 //Найдите сумму элементов, стоящих на нечётных позициях.
 Console.Clear();
 
@@ -13,16 +13,23 @@ int[] GetRandomArray(int size, int minValue, int maxValue)
     return array;
 }
 
-int SumNotEvenPositions(int[] array)
+void SumNotEvenPositions(int[] array)
 {
     int sum = 0;
-    for (int i = 0; i < array.Length; i = i + 2)
+    if (array.Length > 1)
     {
-        sum += array[i];
+        for (int i = 1; i < array.Length; i = i + 2)
+        {
+            sum += array[i];
+        }
+        Console.WriteLine($"Сумма элементов на нечетных позициях равна {sum}.");
     }
-    return sum;
+    else
+    {
+        Console.WriteLine($"В массиве НЕТ элементов на нечетных позициях.");
+    }
 }
 
 int[] array = GetRandomArray(10, -10, 10);
 Console.WriteLine($"[{String.Join(" | ", array)}]");
-Console.WriteLine($"Сумма элементов на нечетных позициях равна {SumNotEvenPositions(array)}.");
+SumNotEvenPositions(array);
